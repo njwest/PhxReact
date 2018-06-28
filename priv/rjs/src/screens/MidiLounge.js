@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Arwes, Button, Content, Words, Row, Col } from 'arwes';
+import { Arwes, Button, Content, Words, Row, Col, Frame } from 'arwes';
 // import MIDISounds from 'midi-sounds-react';
 
 // Play Midi Function
@@ -24,21 +24,32 @@ export default class MidiLounge extends Component{
                       textAlign: 'center',
                       marginTop: '100px',
                     }}>
-                    <header style={{
-                      marginTop: '-10px'
-                    }}>
-                      <h1><Words animate show={anim.entered} layer='success'>
-                        THE LOUNGE
-                      </Words></h1>
-                      <h3 style={{
-                        marginTop: '-20px'
+                      <header style={{
+                        marginTop: '-10px'
                       }}>
-                        <Words animate layer='alert' show={anim.entered}>
-                        at NickWe.st
-                        </Words>
-                      </h3>
-                    </header>
-
+                        <h1><Words animate show={anim.entered} layer='success'>
+                          THE LOUNGE
+                        </Words></h1>
+                        <h3 style={{
+                          marginTop: '-20px'
+                        }}>
+                          <Words animate layer='alert' show={anim.entered}>
+                          at NickWe.st
+                          </Words>
+                        </h3>
+                      </header>
+                      <Frame>
+                        <div>
+                          <h3>
+                            <Words animate layer='success' show={anim.entered}>
+                              $teely |)an midis by Shino
+                            </Words>
+                          </h3>
+                          <Button animate onClick={this.props.selectMidi} data='GaslightingByShino.mp3' layer='secondary'>
+                            Gaslighting Abbie (midi by Shino, song by $teely |)an)
+                          </Button>
+                        </div>
+                      </Frame>
                     </div>
                   </Content>
                   <div style={{

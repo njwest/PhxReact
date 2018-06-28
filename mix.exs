@@ -39,7 +39,9 @@ defmodule ReactPhoenix.Mixfile do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:plug_static_index_html, "~> 1.0.0"}
+      {:plug_static_index_html, "~> 1.0.0"},
+      {:edeliver, "~> 1.5.0"},
+      {:distillery, "~> 1.0.0", warn_missing: false}
     ]
   end
 

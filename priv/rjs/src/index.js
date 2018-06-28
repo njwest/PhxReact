@@ -33,18 +33,31 @@ const mySounds = {
   }
 };
 
+const MyComponent = () => {
+  render(){
+    return (
+      <h1>
+        Hi
+      </h1>
+    )
+  }
+}
+
 class App extends Component{
   constructor(props){
     super(props);
     this.state = {
       midiLounge: false,
       loungeLocked: true,
-      playSecret: false
+      playSecret: false,
+      currentMidi: "BlackCowByShino.mp3",
+      previousMidi: []
     }
 
     this.selectScreen = this.selectScreen.bind(this);
     this.unlockLounge = this.unlockLounge.bind(this);
     this.easterEgg = this.easterEgg.bind(this);
+    this.selectMidi = this.selectMidi.bind(this);
   }
 
   unlockLounge(){
@@ -67,28 +80,38 @@ class App extends Component{
     this.setState({playSecret: true});
   }
 
+  selectMidi(selected){
+    this.setState({
+      currentMidi: selected
+    });
+  }
+
   render(){
     let {
       midiLounge,
       loungeLocked,
-      playSecret
+      playSecret,
+      currentMidi
     } = this.state;
 
     return(
       <ThemeProvider theme={createTheme(myTheme)}>
         <SoundsProvider sounds={createSounds(mySounds)}>
+
             {!midiLounge ?
                 <Home
                   midiButton={this.selectScreen}
                   unlockLounge={this.unlockLounge}
                   loungeLocked={loungeLocked}
+                  nicksMood={"Happy"}
                 />
                 :
-                <MidiLounge homeButton={this.selectScreen}/>
+                <MidiLounge homeButton={this.selectScreen} selectMidi={this.selectMidi} />
             }
+
             <div style={{position: 'fixed', bottom: 0, right: 15}}>
               <audio autoPlay="true" controls>
-                <source src="midi/BlackCowByShino.mp3" type="audio/mpeg" />
+                <source src={`midi/${currentMidi}`} type="audio/mpeg" />
               </audio>
             </div>
             {playSecret ?
