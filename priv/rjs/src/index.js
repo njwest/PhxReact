@@ -33,16 +33,6 @@ const mySounds = {
   }
 };
 
-const MyComponent = () => {
-  render(){
-    return (
-      <h1>
-        Hi
-      </h1>
-    )
-  }
-}
-
 class App extends Component{
   constructor(props){
     super(props);
