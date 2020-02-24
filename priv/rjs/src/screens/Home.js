@@ -21,7 +21,13 @@ export default class Home extends Component{
         }}>
           <Button>
             <h3><Words animate>Locked</Words></h3>
-            <h4>Unlock with the Konami Code</h4>
+            <h4 style={{
+              marginBottom: '5px'
+            }}>
+              Unlock with the
+                <span style={{color: '#00ff00'}}> &nbsp;Konami Code
+                </span>
+              </h4>
           </Button>
         </div>
       )
@@ -32,9 +38,13 @@ export default class Home extends Component{
           marginTop: '25px',
           marginBottom: '36px'
         }}>
-          <Button animate onClick={this.props.midiButton}>
-            <h3><Words animate>Enter</Words></h3>
-            <h4>The Lounge at NickWe.st</h4>
+          <Button animate
+            onClick={this.props.midiButton}
+          >
+            <h3 style={{
+              marginBottom: '5px',
+              color: '#00ff00'
+            }}><Words animate>Enter</Words></h3>
           </Button>
         </div>
       )
@@ -59,19 +69,19 @@ export default class Home extends Component{
                       marginTop: '0.5em'
                     }}>
                     <div style={{ margin: '0 auto', maxWidth: 342 }}>
-                        <Image animate resources='/img/nick-west.png'/>
+                        <Image animate resources='/img/nick-west-headshot.jpg'/>
                     </div>
                     <header style={{
                       marginTop: '-10px'
                     }}>
                       <h1><Words animate show={anim.entered}>
-                        Nick West | 眨眼龙
+                        Nick West | 韋羲
                       </Words></h1>
                       <h3 style={{
                         marginTop: '-20px'
                       }}>
                         <Words animate show={anim.entered}>
-                        Distributed Systems Engineer
+                        Writer & Engineer
                         </Words>
                       </h3>
                     </header>
@@ -100,7 +110,6 @@ export default class Home extends Component{
                           </span>
                         </Button>
                       </Link>
-
                       <Link
                        href='https://medium.com/@njwest/jwt-auth-with-an-elixir-on-phoenix-1-3-guardian-api-and-react-native-mobile-app-1bd00559ea51' target='medium'
                        style={{marginLeft: 20}}
@@ -131,12 +140,48 @@ export default class Home extends Component{
 
                         <p>
                           <Words animate show={anim.entered}>
-                          Nick West is a Distributed Systems Engineer who specializes in Elixir, Phoenix, ReactJS, and React Native. Nick has contributed code to the Ethereum C++ core, the XVG C++ core, and Strava's API docs.
+                            Nick West(韋羲) is a writer, editor, and software engineer who has contributed writing and photography to the South China Morning Post, The Star Ledger, New Brunswick Today, The Daily Targum, and InsiderNJ.
                           </Words>
                         </p>
 
+                        <p>
+                        <Words animate show={anim.entered}>
+                          As an avid open-source developer, Nick has contributed code to the Ethereum C++ compiler core, the XVG C++ blockchain core, Strava's docs, and the Arwes ReactJS cyberpunk UI framework. Nick's code specialties include VueJS, ReactJS, Elixir, Solidity, Tails, and more.
+                        </Words>
+                        </p>
+                        <p>
+                        <Words animate show={anim.entered}>
+                          At press time, Nick giving talks, editing, and working on interesting projects out of Hong Kong.
+                        </Words>
+                        </p>
+
+                        {this.midiButton()}
+
                         <Header animate >
-                            <h3 style={{ margin: 0 }} >Latest Publications</h3>
+                            <h3 style={{ margin: 0 }}>Recent Articles</h3>
+                        </Header>
+                        <p>
+                            <Link href='https://www.scmp.com/comment/opinion/article/3031811/fix-hong-kongs-politics-and-we-can-fix-its-frustrations-too'
+                            target='scmp'
+                            >
+                              <Words animate show={anim.entered}>
+                                >> "Fix Hong Kong’s politics and we can fix its frustrations too" - Backpage Commentary, SCMP Sunday Morning Post, October 6, 2019
+                                </Words>
+                            </Link>
+                            <br/>
+
+                            <Link href='https://www.insidernj.com/50-shades-joe-biden/'
+                            target='insidernj'
+                            >
+                              <Words animate show={anim.entered}
+                              >
+                                >> "50 Shades of Joe Biden" - InsiderNJ Edward Edwards Column, February 5, 2020
+                                </Words>
+                            </Link>
+                        </p>
+
+                        <Header animate >
+                            <h3 style={{ margin: 0 }}>Guides</h3>
                         </Header>
                         <p>
 
@@ -144,20 +189,33 @@ export default class Home extends Component{
                             target='medium'
                             >
                               <Words animate show={anim.entered}>
-                                >>Build an Elixir JWT Auth API</Words>
+                                >> Build an Elixir JWT Auth API</Words>
                             </Link>
-                            <Link href='https://medium.com/@njwest/building-a-react-native-jwt-client-efacf78b9364'
-                            target='medium'
+                            <br/>
+
+                            <Link
+                              href='https://medium.com/@njwest/building-a-react-native-jwt-client-efacf78b9364'
+                              target='medium'
                             >
                               <Words animate show={anim.entered}
                               >
-                                >>Build a React Native JWT Client</Words>
+                                >> Build a React Native JWT Client
+                                </Words>
+                            </Link>
+                            <br/>
+                            <Link
+                              href='https://medium.com/js-dojo/getting-started-with-vuejs-for-web-and-native-285dc64f0f0d'
+                              target='medium'
+                            >
+                              <Words animate show={anim.entered}
+                              >
+                                >> Getting Started with VueJS
+                              </Words>
                             </Link>
                         </p>
 
                       </main>
                     </Frame>
-                    {this.midiButton()}
 
                     </div>
                   </Content>

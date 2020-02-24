@@ -99,11 +99,6 @@ class App extends Component{
                 <MidiLounge homeButton={this.selectScreen} selectMidi={this.selectMidi} />
             }
 
-            <div style={{position: 'fixed', bottom: 0, right: 15}}>
-              <audio autoPlay="true" controls>
-                <source src={`midi/${currentMidi}`} type="audio/mpeg" />
-              </audio>
-            </div>
             {playSecret ?
               <audio autoPlay="true">
                 <source src="sound/secret.mp3" type="audio/mpeg" />

@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Arwes, Button, Content, Words, Row, Col, Frame } from 'arwes';
+import { Arwes, Button, Content, Words, Row, Col, Frame, Image } from 'arwes';
 // import MIDISounds from 'midi-sounds-react';
 
 // Play Midi Function
@@ -22,32 +22,31 @@ export default class MidiLounge extends Component{
                   <Content>
                     <div style={{
                       textAlign: 'center',
-                      marginTop: '100px',
                     }}>
-                      <header style={{
-                        marginTop: '-10px'
-                      }}>
+                      <header>
                         <h1><Words animate show={anim.entered} layer='success'>
-                          THE LOUNGE
+                          Coming Soon: CoV Ninja
                         </Words></h1>
                         <h3 style={{
                           marginTop: '-20px'
                         }}>
-                          <Words animate layer='alert' show={anim.entered}>
-                          at NickWe.st
-                          </Words>
+                        <div style={{ margin: '0 auto', maxWidth: 400 }}>
+                            <Image animate resources='/img/cov-ninja.png'/>
+                        </div>
                         </h3>
                       </header>
                       <Frame>
                         <div>
-                          <h3>
-                            <Words animate layer='success' show={anim.entered}>
-                              $teely |)an midis by Shino
-                            </Words>
-                          </h3>
-                          <Button animate onClick={this.props.selectMidi} data='GaslightingByShino.mp3' layer='secondary'>
-                            Gaslighting Abbie (midi by Shino, song by $teely |)an)
-                          </Button>
+                        <p>
+                          <Words animate show={anim.entered}>
+                            Nick is currently working on a Unity-based educational videogame called Coronavirus Ninja.
+                          </Words>
+                        </p>
+                        <p>
+                          <Words animate show={anim.entered}>
+                            Stay tuned for more information
+                          </Words>
+                        </p>
                         </div>
                       </Frame>
                     </div>
@@ -55,12 +54,17 @@ export default class MidiLounge extends Component{
                   <div style={{
                     textAlign: 'center',
                   }}>
-                    <Button animate onClick={this.props.homeButton} layer='secondary'>
-                      Leave
+                    <Button animate onClick={this.props.homeButton} layer='success'>
+                      Exit
                     </Button>
                   </div>
                 </Col>
               </Row>
+              <div style={{position: 'fixed', bottom: 0, right: 15}}>
+                <audio autoPlay="true" controls>
+                  <source src={`midi/GaslightingByShino.mp3`} type="audio/mpeg" />
+                </audio>
+              </div>
           </Fragment>
         )}
       </Arwes>
